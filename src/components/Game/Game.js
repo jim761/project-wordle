@@ -13,13 +13,12 @@ const answer = sample(WORDS);
 console.info({ answer });
 
 function Game() {
-  const [input, setInput] = useState("");
   const [guessList, setGuessList] = useState([]);
   const [correct, setCorrect] = useState([]);
   const [win, setWin] = useState("");
   function submitInput(inp) {
     const upp = inp.toUpperCase();
-    setInput(upp);
+
     const newGuessList = { name: upp, id: Math.random() };
     const nextList = [...guessList, newGuessList];
     setGuessList(nextList);
