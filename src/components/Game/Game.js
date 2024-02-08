@@ -16,14 +16,12 @@ function Game() {
   const [guessList, setGuessList] = useState([]);
   const [correct, setCorrect] = useState([]);
   const [win, setWin] = useState("");
+
   function submitInput(inp) {
     const upp = inp.toUpperCase();
-
     const newGuessList = { name: upp, id: Math.random() };
     const nextList = [...guessList, newGuessList];
     setGuessList(nextList);
-    console.log(win);
-
     const newCorrect = checkGuess(upp, answer);
     let newWin = "";
     let br = true;
